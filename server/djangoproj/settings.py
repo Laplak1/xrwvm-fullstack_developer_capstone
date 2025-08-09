@@ -28,8 +28,16 @@ SECRET_KEY =\
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'https://silver-garbanzo-r46j69wg9vw935g4x-8000.app.github.dev/']
-CSRF_TRUSTED_ORIGINS = ['https://silver-garbanzo-r46j69wg9vw935g4x-8000.app.github.dev/']
+ALLOWED_HOSTS = [
+    'hainnse15075-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai',
+    'localhost',
+    '127.0.0.1'
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://hainnse15075-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'
+]
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [],
