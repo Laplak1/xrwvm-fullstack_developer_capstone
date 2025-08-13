@@ -102,7 +102,8 @@ def get_cars(request):
     car_models = CarModel.objects.select_related("car_make")
     cars = []
     for car_model in car_models:
-        cars.append({"CarModel": car_model.name, "CarMake": car_model.car_make.name})
+        cars.append({"CarModel": car_model.name,
+                     "CarMake": car_model.car_make.name})
     return JsonResponse({"CarModels": cars})
 
 
@@ -146,9 +147,11 @@ def get_dealer_details(request, dealer_id):
 
         if "8000" in request.get_host():
             if isinstance(dealership_list, list) and len(dealership_list) > 0:
-                return JsonResponse({"status": 200, "dealer": dealership_list[0]})
+                return JsonResponse(
+                    {"status": 200, "dealer": dealership_list[0]})
             else:
-                return JsonResponse({"status": 404, "message": "Dealer not found"})
+                return JsonResponse(
+                    {"status": 404, "message": "Dealer not found"})
 
         return JsonResponse(dealership_list, safe=False)
 
